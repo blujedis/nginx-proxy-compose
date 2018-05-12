@@ -1,0 +1,37 @@
+version: '2'
+services:
+  proxy:
+    image: jwilder/nginx-proxy:alpine
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro #same as before
+      - conf:/etc/nginx/conf.d # nginx config.
+      - vhost:/etc/nginx/vhost.d # to update vhost configuration
+      - certs:/etc/nginx/certs:ro # update this to change cert location
+      - html:/usr/share/nginx/html # to write challenge files
+    environment:
+      - DEFAULT_HOST=spoke.local
+  ssl:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: nginx-proxy-ssl
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - certs:/etc/nginx/certs:rw # same path as above, now RW
+    volumes_from:
+      - proxy
+    depends_on:
+      - proxy
+volumes:
+  conf:
+  vhost:
+  html:
+  certs:
+  apps:
+networks:
+  default:
+    external:
+      name: webnet
