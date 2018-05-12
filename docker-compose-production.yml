@@ -1,6 +1,0 @@
-version: '2'
-services:
-  proxy:
-    ports:
-      - '80'
-      - '443'

@@ -5,7 +5,8 @@ services:
     container_name: nginx-proxy
     restart: always
     ports:
-      - '80:80'
+      - '88:80'
+      - '8443:443'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro #same as before
       - conf:/etc/nginx/conf.d # nginx config.
@@ -13,7 +14,7 @@ services:
       - certs:/etc/nginx/certs:ro # update this to change cert location
       - html:/usr/share/nginx/html # to write challenge files
     environment:
-      - DEFAULT_HOST=spoke.local
+      - DEFAULT_HOST=default.local
   ssl:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: nginx-proxy-ssl
@@ -30,8 +31,7 @@ volumes:
   vhost:
   html:
   certs:
-  apps:
 networks:
   default:
     external:
-      name: webnet
+      name: nginx-proxy

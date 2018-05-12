@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/origin1tech/spoke-nginx-proxy.git"
   },
+  "scripts": {
+    "postinstall": ""
+  },
   "keywords": [
     "nginx",
     "nginx-proxy",
@@ -18,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/origin1tech/spoke-nginx-proxy/issues"
   },
-  "homepage": "https://github.com/origin1tech/spoke-nginx-proxy#readme"
+  "homepage": "https://github.com/origin1tech/spoke-nginx-proxy#readme",
+  "dependencies": {}
 }
