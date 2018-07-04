@@ -7,13 +7,13 @@ Docker compose files for setting up automated Nginx Proxy and SSL for docker con
 Either pull down this repository using Git:
 
 ```sh
-$ git pull https://github.com/origin1tech/nginx-proxy-compose.git
+$ git pull https://github.com/blujedis/nginx-proxy-compose.git
 ```
 
 You can also install into your node modules using NPM if you wish. Note it is not published to NPM.
 
 ```sh
-npm install origin1tech/compose-nginx-proxy
+npm install blujedis/compose-nginx-proxy
 ```
 
 ## Usage

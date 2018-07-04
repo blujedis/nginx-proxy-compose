@@ -4,7 +4,7 @@
   "description": "Docker compose file for creating ngxinx-proxy and letsencrypt.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/origin1tech/spoke-nginx-proxy.git"
+    "url": "git+https://github.com/blujedis/spoke-nginx-proxy.git"
   },
   "scripts": {
     "postinstall": ""
@@ -16,11 +16,11 @@
     "proxy",
     "reverse proxy"
   ],
-  "author": "Origin1 Technolgies <origin1tech@gmail.com>",
+  "author": "Blujedi <blujedicorp@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/origin1tech/spoke-nginx-proxy/issues"
+    "url": "https://github.com/blujedis/spoke-nginx-proxy/issues"
   },
-  "homepage": "https://github.com/origin1tech/spoke-nginx-proxy#readme",
+  "homepage": "https://github.com/blujedis/spoke-nginx-proxy#readme",
   "dependencies": {}
 }
